@@ -65,7 +65,7 @@ nav > h1 {
   cursor: pointer;
 }
 .blog-item:hover {
-  box-shadow: 12px 12px 0px rgb(39, 39, 39);
+  box-shadow: 12px 12px 0px rgb(245, 190, 73);
 }
 
 .blog-title {
