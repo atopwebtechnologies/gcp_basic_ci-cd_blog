@@ -17,12 +17,13 @@ h1 {
 }
 
 nav {
+  border-top: 2px solid black;
   border-bottom: 2px solid black;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 
 nav > h1 {
-  font-size: 36px;
+  font-size: 32px;
   letter-spacing: 2px;
 }
 
@@ -86,7 +87,6 @@ footer {
 
 footer > p {
   font-weight: 600;
-  /* font-family: "Bakbak One", cursive; */
 }
 
 @media (max-width: 1312px) {
