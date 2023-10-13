@@ -9,22 +9,78 @@
 body {
   min-height: 100vh;
   background-color: #f5be49;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1,
+input {
+  font-family: "Bakbak One", cursive;
+}
+
+body,
+textarea {
   font-family: "Times New Roman", Times, serif;
 }
 
-h1 {
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-style: italic;
   font-family: "Bakbak One", cursive;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  gap: 1px;
+  align-items: center;
 }
 
 nav {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  padding: 10px 40px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create {
+  height: 50px;
 }
 
 nav > h1 {
   font-size: 32px;
   letter-spacing: 2px;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hero {
@@ -45,7 +101,7 @@ nav > h1 {
 }
 
 .container {
-  padding: 20px 80px;
+  padding: 20px 160px;
 }
 
 .blog-list {
@@ -74,7 +130,6 @@ nav > h1 {
   margin-bottom: 20px;
 }
 .blog-body {
-  font-size: 13px;
   margin-bottom: 20px;
 }
 
@@ -86,12 +141,61 @@ footer {
 }
 
 footer > p {
-  font-weight: 600;
+  font-weight: 500;
+  text-align: center;
+}
+
+.create_post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+form {
+  background-color: white;
+  width: 600px;
+  padding: 30px;
+}
+
+form > .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form > .inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  gap: 40px;
+}
+
+.input {
+  padding: 20px 15px;
+  border: 2px solid #000;
+  outline: none;
+  font-size: 15px;
+  resize: none;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close,
+.add {
+  height: 35px;
+  width: 35px;
 }
 
 @media (max-width: 1312px) {
   .blog-list {
     gap: 50px;
+  }
+  .container {
+    padding: 20px 80px;
   }
 }
 @media (max-width: 600px) {
@@ -117,8 +221,12 @@ footer > p {
 
   nav > h1 {
     font-size: 25px;
+    letter-spacing: 0;
   }
   .container {
     padding: 20px;
+  }
+  form {
+    padding: 15px;
   }
 }

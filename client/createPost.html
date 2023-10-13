@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Create Post</title>
+  </head>
+  <body>
+    <div class="create_post">
+      <div id="loadercreatePost" class="loader"></div>
+
+      <form id="postForm">
+        <div class="header">
+          <h1>NEW POST</h1>
+
+          <a href="index.html">
+            <img src="asset/close.png" alt="close" class="close" />
+          </a>
+        </div>
+
+        <div class="inputs">
+          <input type="text" class="input" id="postTitle" placeholder="Title" />
+          <textarea
+            class="input"
+            placeholder="Content"
+            cols="30"
+            rows="10"
+            id="postContent"
+          ></textarea>
+        </div>
+
+        <div class="submit">
+          <button type="submit" id="createPostButton">
+            <img src="asset/add.png" alt="add" class="add" />
+            <h1>CREATE</h1>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
