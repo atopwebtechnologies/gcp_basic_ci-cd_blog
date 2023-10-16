@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const postContentInput = document.getElementById("postContent");
 
   // API URLs
-  const apiUrl = "https://localhost:8080/api";
+  const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
   // Function to fetch and display blog posts
   const fetchBlogPosts = async () => {
@@ -32,7 +32,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const blogBody = document.createElement("p");
         blogBody.classList.add("blog-body");
-        blogBody.textContent = post.body;
+
+        // Limit the text to 300 characters
+        blogBody.textContent =
+          post.body.length > 300
+            ? post.body.substring(0, 300) + "..."
+            : post.body;
 
         blogItem.appendChild(blogTitle);
         blogItem.appendChild(blogBody);
@@ -46,6 +51,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       blogList.style.display = "grid";
     }
   };
+
+  // Initial fetch and display of blog posts
+  fetchBlogPosts();
 
   // Event listener for form submission
   postForm.addEventListener("submit", async (e) => {
@@ -93,7 +101,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       fetchBlogPosts();
     }
   });
-
-  // Initial fetch and display of blog posts
-  fetchBlogPosts();
 });
