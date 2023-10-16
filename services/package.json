@@ -7,6 +7,8 @@
     "start": "node dist/api/app.js",
     "build": "tsc",
     "dev": "tsc -w & nodemon app.ts",
+    "dev_": "nodemon app.ts",
+    "seed": "ts-node backend/db/seeders/blogSeeder.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
