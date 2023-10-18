@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       postForm.style.display = "block";
 
       //redirect to homepage
-      window.location.href = "/index.html";
+      // window.location.href = "/index.html";
 
       // Fetch and display the updated blog posts
       blogList.innerHTML = ""; // Clear the existing content
