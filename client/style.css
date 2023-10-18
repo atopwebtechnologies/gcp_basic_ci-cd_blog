@@ -69,6 +69,11 @@ nav > h1 {
   letter-spacing: 2px;
 }
 
+main {
+  background-color: aqua;
+  /* max-width: 1570px; */
+}
+
 .loader {
   border: 5px solid #f3f3f3;
   border-top: 5px solid #000;
@@ -93,7 +98,7 @@ nav > h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px 0;
+  margin: 60px 0;
 }
 
 .logo {
@@ -112,9 +117,8 @@ nav > h1 {
 
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 120px;
-
   place-items: center;
 }
 
@@ -205,7 +209,22 @@ form > .inputs {
     gap: 50px;
   }
   .container {
-    padding: 20px 80px;
+    padding: 20px 40px;
+  }
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+}
+@media (max-width: 724px) {
+  nav {
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .blog-list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
   }
 }
 @media (max-width: 600px) {
@@ -213,11 +232,9 @@ form > .inputs {
     height: 20rem;
     width: 22rem;
   }
+
   nav > h1 {
     font-size: 30px;
-  }
-  .container {
-    padding: 20px 40px;
   }
 }
 @media (max-width: 470px) {
@@ -225,17 +242,18 @@ form > .inputs {
     height: 17rem;
     width: 20rem;
   }
-  nav {
-    padding: 20px;
-  }
 
   nav > h1 {
     font-size: 25px;
     letter-spacing: 0;
   }
+  .hero {
+    margin: 40px 0;
+  }
   .container {
     padding: 20px;
   }
+
   form {
     padding: 15px;
   }
