@@ -126,6 +126,7 @@ main {
   border: 4px solid #000;
   border-radius: 10px;
   max-width: 500px;
+
   padding: 20px;
   margin-bottom: 20px;
   background-color: #f4f4f4;
@@ -204,16 +205,30 @@ form > .inputs {
   width: 35px;
 }
 
+@media (max-width: 1700px) {
+  .container {
+    padding: 20px 80px;
+  }
+  .blog-list {
+    gap: 80px;
+  }
+}
+@media (max-width: 1450px) {
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 1312px) {
   .blog-list {
-    gap: 50px;
+    gap: 60px;
   }
   .container {
     padding: 20px 40px;
   }
+}
+@media (max-width: 999px) {
   .blog-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 724px) {
@@ -221,10 +236,6 @@ form > .inputs {
     padding: 20px;
     flex-direction: column;
     gap: 10px;
-  }
-  .blog-list {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 60px;
   }
 }
 @media (max-width: 600px) {
@@ -252,6 +263,9 @@ form > .inputs {
   }
   .container {
     padding: 20px;
+  }
+  .blog-title {
+    text-align: center;
   }
 
   form {
