@@ -2,12 +2,11 @@ import dotenv from 'dotenv';
 import { createConnection, Connection } from 'mysql2/promise';
 import { blogs } from './blogSeedData';
 
-// dotenv.config({ path: "../../../.env" });
 dotenv.config();
 
 const seedBlogs = async () => {
-    console.log("Before connecting....")
-    console.log(process.env.MYSQL_HOST)
+    console.log("Before connecting....");
+    console.log(process.env.MYSQL_HOST);
 
     // Create a separate database connection for seeding
     const seederConnection: Connection = await createConnection({
@@ -15,10 +14,22 @@ const seedBlogs = async () => {
         user: process.env.MYSQL_USER,
         password: process.env.MYSQL_PASSWORD,
         database: process.env.MYSQL_DATABASE,
-        // port: Number(process.env.MYSQL_PORT)
+        port: Number(process.env.MYSQL_PORT) // If you have a specific port, uncomment this line
     });
 
     console.log("Connected to the database for seeding.");
+
+    // Ensure the blogs table exists
+    const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS blogs (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            title VARCHAR(255) NOT NULL,
+            content TEXT NOT NULL,
+            createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        )
+    `;
+    await seederConnection.execute(createTableQuery);
 
     // Insert the blog posts into the database
     for (let blog of blogs) {
