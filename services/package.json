@@ -5,6 +5,7 @@
   "main": "app.ts",
   "scripts": {
     "start": "node dist/api/app.js",
+    "start:prod": "NODE_ENV=production npm start",
     "build": "tsc",
     "dev": "tsc -w & nodemon app.ts",
     "dev_": "nodemon app.ts",

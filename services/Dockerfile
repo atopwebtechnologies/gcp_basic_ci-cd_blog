@@ -29,7 +29,7 @@ COPY --from=dev_Builder /app/dist /app/dist
 # Make port 3000 available to the world outside this container
 EXPOSE 3000
 
-# Define environment variables
+# Set NODE_ENV environment variable
 ENV NODE_ENV=production
 
 # Run app.js when the container launches
